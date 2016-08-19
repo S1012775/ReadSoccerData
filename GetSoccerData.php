@@ -2,7 +2,7 @@
 
 require_once 'Connect.php';
 
-header("Refresh: 60; url='https://payment-annyke.c9users.io/ReadSoccerData/'");
+header("Refresh: 60; url='https://payment-annyke.c9users.io/SoccerData/'");
 header("content-type: text/html; charset=utf-8");
 
 function getData()
