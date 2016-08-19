@@ -19,7 +19,7 @@ function getData()
     curl_setopt($ch, CURLOPT_HEADER, 0);
     $pageContent = curl_exec($ch);
 
-    curl_setopt($ch, CURLOPT_URL, "http://www.228365365.com/app/member/FT_future/body_var.php?uid=test00&rtype=r&langx=zh-cn&mtype=3&page_no=0&league_id=&hot_game=");
+    curl_setopt($ch, CURLOPT_URL, "http://www.228365365.com/app/member/FT_browse/body_var.php?uid=test00&rtype=r&langx=zh-cn&mtype=3&page_no=0&league_id=&hot_game=");
     curl_setopt($ch, CURLOPT_COOKIEFILE, dirname(__FILE__)."cookie.txt");
     //CURL 要發出的 HTTP Request 的 Cookie
     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
