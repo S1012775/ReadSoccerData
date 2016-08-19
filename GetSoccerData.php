@@ -35,3 +35,47 @@ function getData()
 
     return $showdata;
 }
+
+function insertData($v)
+{
+    $connect = new Connect;
+
+    $sql =  "DELETE FROM `soccerData`";
+    $result = $connect->db->prepare($sql);
+    $result->execute();
+
+    $league = $v[5];
+    $time = $v[3];
+    $event = $v[11]."<br>".$v[13];
+    $whole_win = $v[31].",".$v[33].",".$v[35];
+    $whole_ball = $v[19].",".$v[21];
+    $whole_bs = $v[27].",".$v[29];
+    $single_double = $v[37].",".$v[41].",".$v[39].",".$v[43];
+    $half_win = $v[63].",".$v[65].",".$v[67];
+    $half_ball =  $v[51].",".$v[53];
+    $half_bs = $v[61].",".$v[59];
+    $sql = "INSERT INTO `soccerData`(
+        `league`,
+        `starttime`,
+        `event`,
+        `whole_win`,
+        `whole_ball`,
+        `whole_bs`,
+        `single_double`,
+        `half_win`,
+        `half_ball`,
+        `half_bs`)
+        VALUES (
+        '$league',
+        '$time',
+        '$event',
+        '$whole_win',
+        '$whole_ball',
+        '$whole_bs',
+        '$single_double',
+        '$half_win',
+        '$half_ball',
+        '$half_bs')";
+    $result = $connect->db->prepare($sql);
+    $result->execute();
+}
